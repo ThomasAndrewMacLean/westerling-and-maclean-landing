@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>westerling - maclean</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Noto Serif", serif;
+        color: #777;
+      }
+      a {
+        color: #405eb7;
+      }
+      main {
+        display: flex;
+      }
+      h1 {
+        color: #333;
+        white-space: pre;
+      }
+      .left,
+      .right {
+        width: 50vw;
+        overflow: hidden;
+        height: 100vh;
+      }
+      .right {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-end;
+        padding: 2rem;
+      }
+      img {
+        height: 100%;
+        object-fit: cover;
+      }
+      @media only screen and (max-width: 800px) {
+        main {
+          flex-wrap: wrap;
+        }
+        img {
+          height: auto;
+        }
+        .left,
+        .right {
+          width: 100vw;
+          overflow: hidden;
+          height: 50vh;
+        }
+      }
+      @media only screen and (max-width: 400px) {
+        body {
+          font-size: 12px;
+        }
+      }
+    </style>
+    <script>
+      if (window.navigator && navigator.serviceWorker) {
+        navigator.serviceWorker
+          .getRegistrations()
+          .then(function (registrations) {
+            for (let registration of registrations) {
+              registration.unregister();
+            }
+          });
+      }
+    </script>
+  </head>
+  <body>
+    <main>
+      <div class="left">
+        <img src="background.jpeg" alt="feathres" />
+      </div>
+      <div class="right">
+        <h1>westerling - maclean</h1>
+        <p>
+          /marketing - projectmanagement/
+        </p>
+        <a href="mailto:hello@westerling-maclean.be">contact</a>
+      </div>
+    </main>
+  </body>
+</html>
