@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta
+      http-equiv="Refresh"
+      content="1; url='https://westerling-maclean.be'"
+    />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>westerling - maclean</title>
@@ -8,7 +12,6 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;1,700&display=swap"
       rel="stylesheet"
     />
-    <meta http-equiv="Refresh" content="1; url='https://westerling-maclean.be'" />
     <style>
       * {
         margin: 0;
@@ -24,6 +27,8 @@
       }
       main {
         display: flex;
+        height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
       }
       h1 {
         color: #333;
@@ -31,9 +36,9 @@
       }
       .left,
       .right {
-        width: 50vw;
+        width: 50%;
         overflow: hidden;
-        height: 100vh;
+        height: 100%;
       }
       .right {
         display: flex;
@@ -51,13 +56,16 @@
           flex-wrap: wrap;
         }
         img {
-          height: auto;
+          height: 100%;
+          width: 100%;
+          object-fit: cover;
         }
+
         .left,
         .right {
-          width: 100vw;
+          width: 100%;
           overflow: hidden;
-          height: 50vh;
+          height: 50%;
         }
       }
       @media only screen and (max-width: 400px) {
@@ -91,5 +99,9 @@
         <a href="mailto:hello@westerling-maclean.be">contact</a>
       </div>
     </main>
+    <script>
+      let vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+    </script>
   </body>
 </html>
