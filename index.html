@@ -18,11 +18,15 @@
         font-family: "Noto Serif", serif;
         color: #777;
       }
+      a {
+        color: #405eb7;
+      }
       main {
         display: flex;
       }
       h1 {
         color: #333;
+        white-space: pre;
       }
       .left,
       .right {
@@ -39,7 +43,26 @@
       }
       img {
         height: 100%;
-        object-fit: coverv;
+        object-fit: cover;
+      }
+      @media only screen and (max-width: 800px) {
+        main {
+          flex-wrap: wrap;
+        }
+        img {
+          height: auto;
+        }
+        .left,
+        .right {
+          width: 100vw;
+          overflow: hidden;
+          height: 50vh;
+        }
+      }
+      @media only screen and (max-width: 400px) {
+        body {
+          font-size: 12px;
+        }
       }
     </style>
   </head>
