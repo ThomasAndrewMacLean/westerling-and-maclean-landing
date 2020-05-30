@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>westerling - maclean</title>
+    <title>westerling & maclean</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Antic+Didone&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -15,7 +15,7 @@
         box-sizing: border-box;
       }
       body {
-        font-family: "Noto Serif", serif;
+        font-family: "Antic Didone", serif;
         color: #777;
       }
       a {
@@ -42,10 +42,33 @@
         justify-content: flex-end;
         align-items: flex-end;
         padding: 2rem;
+        position: relative;
       }
       img {
         height: 100%;
         object-fit: cover;
+      }
+
+      .quote {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      blockquote {
+        max-width: 300px;
+        text-align: justify;
+        line-height: 1.5rem;
+        margin-top: -12%;
+      }
+
+      em {
+        float: right;
+        margin-top: 2rem;
       }
       @media only screen and (max-width: 800px) {
         main {
@@ -63,8 +86,17 @@
           overflow: hidden;
           height: 50%;
         }
+        blockquote {
+          line-height: 1.2rem;
+        }
       }
       @media only screen and (max-width: 400px) {
+        blockquote {
+          max-width: 75%;
+        }
+        em {
+          margin-top: 0.5rem;
+        }
         body {
           font-size: 12px;
         }
@@ -88,7 +120,19 @@
         <img src="background.jpeg" alt="feathres" />
       </div>
       <div class="right">
-        <h1>westerling - maclean</h1>
+        <div class="quote">
+          <blockquote>
+            1 + 1 = 2<br />
+            Far is the feeling from the calculation.<br /><br />
+            Yellow + blue = hundreds of greens<br />
+            The reason is far away from art.
+
+            <em>
+              Bruno Murani
+            </em>
+          </blockquote>
+        </div>
+        <h1>westerling & maclean</h1>
         <p>
           /marketing - projectmanagement/
         </p>
@@ -96,8 +140,12 @@
       </div>
     </main>
     <script>
-      let vh = window.innerHeight * 0.01;
-      document.documentElement.style.setProperty("--vh", `${vh}px`);
+      const setResizeVariables = () => {
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      };
+      window.addEventListener("resize", setResizeVariables);
+      setResizeVariables();
     </script>
   </body>
 </html>
